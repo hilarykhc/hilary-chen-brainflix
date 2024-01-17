@@ -1,0 +1,15 @@
+.search {
+  &__avatar {
+    height: 2.5rem;
+    width: 3rem;
+    border-radius: 50%;
+  }
+
+  &__upload--tablet {
+    display: none;
+
+    @include tablet-and-desktop {
+      display: flex;
+    }
+  }
+}

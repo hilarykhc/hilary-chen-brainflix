@@ -1,26 +1,63 @@
+import "./Header.scss";
+import brainFlixLogo from "../../assets/Images/Logo/BrainFlix-logo.svg";
+import searchIcon from "../../assets/Images/Icons/search.svg";
+import uploadButton from "../../assets/Images/Icons/upload.svg";
+import avatar from "../../assets/Images/Mohan-muruge.jpg";
+
 export default function Header() {
   return (
-    <header class="header">
-      <div class="header__wrapper">
-        <a class="header__link" href="#">
-          <img class="header__logo" src="#" alt="BrainFlix logo" />
+    <header className="header">
+      <div className="header__wrapper">
+        <a className="header__link" href="#">
+          <img
+            className="header__logo"
+            src={brainFlixLogo}
+            alt="BrainFlix logo"
+          />
         </a>
 
-        <form class="search">
-          <div class="search__wrapper">
-            <img src="#" alt="search icon" class="search__icon" />
-            <label for="search" class="search__label"></label>
-            <input type="text" class="search__input" placeholder="Search" />
-          </div>
+        <form className="search">
+          <div className="search__wrapper--mobile">
+            <div className="search__wrapper">
+              <label htmlFor="search" className="search__label">
+                <img
+                  src={searchIcon}
+                  alt="search icon"
+                  className="search__icon"
+                />
+              </label>
+              <input
+                id="search"
+                type="text"
+                className="search__input" //add img as background-img to .search__input
+                placeholder="Search"
+              />
+            </div>
 
-          <button class="search__upload" type="submit">
-            <img src="#" alt="upload icon" class="search__upload-icon" />
+            <button
+              className="search__upload search__upload--tablet"
+              type="submit"
+            >
+              <img
+                src={uploadButton}
+                alt="upload icon"
+                className="search__upload-icon"
+              />
+              UPLOAD
+            </button>
+
+            <div className="search__avatar-wrapper">
+              <img src={avatar} alt="Mohan-muruge" className="search__avatar" />
+            </div>
+          </div>
+          <button className="search__upload" type="submit">
+            <img
+              src={uploadButton}
+              alt="upload icon"
+              className="search__upload-icon"
+            />
             UPLOAD
           </button>
-
-          <div class="search__avatar-wrapper">
-            <img src="#" alt="Mohan-muruge" class="search__avatar" />
-          </div>
         </form>
       </div>
     </header>
