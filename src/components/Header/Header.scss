@@ -85,6 +85,10 @@
     text-decoration: none;
     order: 3;
 
+    &:hover {
+      background-color: $brainflix-darkblue;
+    }
+
     @include tablet-and-desktop {
       order: 2;
       max-width: 11rem;
