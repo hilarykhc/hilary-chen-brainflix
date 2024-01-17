@@ -21,3 +21,9 @@
   display: flex;
   flex-direction: column;
 }
+
+@mixin background-iconImg {
+  background-position: 0;
+  background-position-x: 0.5rem;
+  background-repeat: no-repeat;
+}

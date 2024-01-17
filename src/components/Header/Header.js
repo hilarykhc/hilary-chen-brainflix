@@ -1,11 +1,25 @@
 import "./Header.scss";
 import brainFlixLogo from "../../assets/Images/Logo/BrainFlix-logo.svg";
-import searchIcon from "../../assets/Images/Icons/search.svg";
-import uploadButton from "../../assets/Images/Icons/upload.svg";
 import avatar from "../../assets/Images/Mohan-muruge.jpg";
 
 export default function Header() {
   return (
+    <header class="header">
+      <a class="header__link" href="#">
+        <img class="header__logo" src={brainFlixLogo} alt="BrainFlix logo" />
+      </a>
+
+      <div class="header__search">
+        <input type="text" class="header__search-input" placeholder="Search" />
+        <img src={avatar} alt="Mohan-muruge" class="header__search-avatar" />
+        <a class="header__upload-btn upload-btn" href="#">
+          UPLOAD
+        </a>
+      </div>
+    </header>
+
+    /*
+
     <header className="header">
       <div className="header__wrapper">
         <a className="header__link" href="#">
@@ -56,7 +70,11 @@ export default function Header() {
             UPLOAD
           </button>
         </form>
+
+    
       </div>
     </header>
+
+    */
   );
 }
