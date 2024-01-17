@@ -34,10 +34,7 @@ export default function Header() {
               />
             </div>
 
-            <button
-              className="search__upload search__upload--tablet"
-              type="submit"
-            >
+            <button className="search__btn search__btn--tablet" type="submit">
               <img
                 src={uploadButton}
                 alt="upload icon"
@@ -50,11 +47,11 @@ export default function Header() {
               <img src={avatar} alt="Mohan-muruge" className="search__avatar" />
             </div>
           </div>
-          <button className="search__upload" type="submit">
+          <button className="search__btn" type="submit">
             <img
               src={uploadButton}
               alt="upload icon"
-              className="search__upload-icon"
+              className="search__btn-icon"
             />
             UPLOAD
           </button>
