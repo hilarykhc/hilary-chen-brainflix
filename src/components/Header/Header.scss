@@ -11,12 +11,15 @@
   @include tablet-and-desktop {
     @include flex-row;
     justify-content: space-around;
-    padding: 1rem 2.5rem;
+    padding: 1rem 2.25rem;
+  }
+
+  @include desktop {
+    padding: 1rem 6.75rem;
   }
 
   &__logo {
-    max-height: 1.5rem;
-    max-width: 7.5rem;
+    width: 7.5rem;
   }
 
   &__search {
