@@ -1,0 +1,20 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.hero {
+  background-color: $brainflix-darkblack;
+
+  @include tablet-and-desktop {
+    display: flex;
+    justify-content: center;
+  }
+
+  video {
+    width: 100%;
+    object-fit: cover;
+
+    @include tablet-and-desktop {
+      width: 70%;
+    }
+  }
+}

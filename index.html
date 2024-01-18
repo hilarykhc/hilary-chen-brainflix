@@ -18,15 +18,79 @@
       </div>
     </header>
 
-    <hero class="hero">
-      <div class="hero__wrapper">
-        <video src="#" class="hero__video" poster="#">
-          <source src="#" type="video/mp4" />
-        </video>
+    <main>
+      <hero className="hero">
+        <video
+          className="hero__video"
+          src="{selectedVideo.video}"
+          controls
+          poster="{selectedVideo.image}"
+        ></video>
+      </hero>
+
+      <div>
+        <div>
+          <section class="videoDetails">
+            <h1 class="videoDetails__title">title</h1>
+            <div class="videoDetails__info">
+              <div class="videoDetails__info-wrapper">
+                <p class="videoDetails__info-wrapper-creator">by creator</p>
+                <p class="videoDetails__info-wrapper-date">date</p>
+              </div>
+              <div class="videoDetails__info-wrapper">
+                <div class="videoDetails__info-wrapper-views">
+                  <img src="#" alt="views icon" />
+                  <p>number of views</p>
+                </div>
+                <div class="videoDetails__info-wrapper-likes">
+                  <img src="#" alt="likes icon" />
+                  <p>number of likes</p>
+                </div>
+              </div>
+            </div>
+            <div class="videoDetails__content">
+              <p>description of video</p>
+            </div>
+          </section>
+
+          <section class="comments">
+            <p class="comments__number"></p>
+            <div class="comments__input"></div>
+            <div class="comments__content">
+              <div class="comments__content-wrapper1">
+                <div class="comments__content-img"></div>
+              </div>
+              <div class="comments__content-wrapper2">
+                <div class="comments__content-wrapper2-nameDate">
+                  <p class="comments__content-wrapper2-name">name</p>
+                  <p class="comments__content-wrapper2-date">date</p>
+                </div>
+                <p class="comments__content-wrapper2-text">comment text</p>
+              </div>
+            </div>
+          </section>
+        </div>
       </div>
 
-      <section class="hero__video-wrapper">
-        <h1 class="hero__video-title">#</h1>
+      <div>
+        <section class="videoList">
+          <p class="videoList__title">NEXT VIDEOS</p>
+          <div class="videoList__wrapper">
+            <div class="videoList__wrapper-item">
+              <a href="#">
+                <div>
+                  <img src="#" alt="#" class="videoList__wrapper-item-img" />
+                </div>
+                <div class="videoList__wrapper-item-info">
+                  <p class="videoList__wrapper-item-info-title">title</p>
+                  <p class="videoList__wrapper-item-info-creator">creator</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- <h1 class="hero__video-title">#</h1>
         <article class="hero__video-detail">
           <div class="hero__detail-wrapper">
             <h2 class="hero__video-producer"></h2>
@@ -39,8 +103,7 @@
             <p class="hero__like-number">#</p>
           </div>
         </article>
-        <p class="hero__detail">#</p>
-      </section>
-    </hero>
+        <p class="hero__detail">#</p> -->
+    </main>
   </body>
 </html>
