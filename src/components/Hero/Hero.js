@@ -1,5 +1,5 @@
 import "./Hero.scss";
-import { useState } from "react";
+//import { useState } from "react";
 import videoDetailsData from "../../data/video-details.json";
 
 export default function Hero() {

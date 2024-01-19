@@ -2,12 +2,20 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
-.videoDetails {
+section.videoDetails {
   padding: 1.5rem 1rem 1rem;
 
   @include tablet-and-desktop {
     padding: 2.25rem;
   }
+}
+
+.videoDetails {
+  // padding: 1.5rem 1rem 1rem;
+
+  // @include tablet-and-desktop {
+  //   padding: 2.25rem;
+  // }
 
   &__title {
     color: $brainflix-black;

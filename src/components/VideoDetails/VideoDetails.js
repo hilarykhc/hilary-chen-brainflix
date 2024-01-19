@@ -1,5 +1,5 @@
 import "./VideoDetails.scss";
-import { useState } from "react";
+//import { useState } from "react";
 import videoDetailsData from "../../data/video-details.json";
 import ViewsIcon from "../../assets/Images/Icons/views.svg";
 import LikesIcon from "../../assets/Images/Icons/likes.svg";
@@ -14,19 +14,19 @@ export default function VideoDetails() {
     return <div>Just a moment...</div>;
   }
   return (
-    <section class="videoDetails">
-      <h1 class="videoDetails__title">{selectedVideo.title}</h1>
-      <div class="videoDetails__info">
-        <div class="videoDetails__info-wrapper">
-          <p class="videoDetails__info-wrapper-channel">
+    <section classNameName="videoDetails">
+      <h1 className="videoDetails__title">{selectedVideo.title}</h1>
+      <div className="videoDetails__info">
+        <div className="videoDetails__info-wrapper">
+          <p className="videoDetails__info-wrapper-channel">
             By {selectedVideo.channel}
           </p>
-          <p class="videoDetails__info-wrapper-date">
+          <p className="videoDetails__info-wrapper-date">
             {selectedVideo.timestamp}
           </p>
         </div>
-        <div class="videoDetails__info-wrapper">
-          <div class="videoDetails__info-wrapper-views">
+        <div className="videoDetails__info-wrapper">
+          <div className="videoDetails__info-wrapper-views">
             <img
               className="videoDetails__info-wrapper-views-img"
               src={ViewsIcon}
@@ -34,7 +34,7 @@ export default function VideoDetails() {
             />
             <p>{selectedVideo.views}</p>
           </div>
-          <div class="videoDetails__info-wrapper-likes">
+          <div className="videoDetails__info-wrapper-likes">
             <img
               className="videoDetails__info-wrapper-likes-img"
               src={LikesIcon}
@@ -44,7 +44,7 @@ export default function VideoDetails() {
           </div>
         </div>
       </div>
-      <div class="videoDetails__description">
+      <div className="videoDetails__description">
         <p>{selectedVideo.description}</p>
       </div>
     </section>

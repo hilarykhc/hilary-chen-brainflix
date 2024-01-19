@@ -1,0 +1,34 @@
+@use "../../styles/partials/resets" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.comments {
+  &__card-img {
+    @include avatar-no-img;
+
+    @include tablet-and-desktop {
+      height: 2.5rem;
+      width: 2.5rem;
+    }
+  }
+
+  &__card {
+    display: flex;
+    padding: 1rem 0;
+    border-bottom: 1px solid $mercury-grey;
+  }
+
+  &__card-wrapper2-nameDate {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+  }
+
+  &__card-wrapper2-date {
+    color: $silver-grey;
+  }
+
+  &__card-wrapper2-name {
+    font-weight: 600;
+  }
+}
