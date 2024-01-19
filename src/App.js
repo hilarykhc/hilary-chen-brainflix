@@ -4,6 +4,7 @@ import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
 import videoDetailsData from "../src/data/video-details.json";
 import VideoDetails from "./components/VideoDetails/VideoDetails";
+import Comments from "./components/Comments/Comments";
 
 function App() {
   return (
@@ -12,7 +13,11 @@ function App() {
       <main>
         <Hero />
         <div>
-          <VideoDetails />
+          <div>
+            <VideoDetails />
+            <Comments />
+          </div>
+          <div></div>
         </div>
       </main>
     </body>

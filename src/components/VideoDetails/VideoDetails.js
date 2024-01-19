@@ -14,41 +14,39 @@ export default function VideoDetails() {
     return <div>Just a moment...</div>;
   }
   return (
-    <div>
-      <section class="videoDetails">
-        <h1 class="videoDetails__title">{selectedVideo.title}</h1>
-        <div class="videoDetails__info">
-          <div class="videoDetails__info-wrapper">
-            <p class="videoDetails__info-wrapper-channel">
-              By {selectedVideo.channel}
-            </p>
-            <p class="videoDetails__info-wrapper-date">
-              {selectedVideo.timestamp}
-            </p>
+    <section class="videoDetails">
+      <h1 class="videoDetails__title">{selectedVideo.title}</h1>
+      <div class="videoDetails__info">
+        <div class="videoDetails__info-wrapper">
+          <p class="videoDetails__info-wrapper-channel">
+            By {selectedVideo.channel}
+          </p>
+          <p class="videoDetails__info-wrapper-date">
+            {selectedVideo.timestamp}
+          </p>
+        </div>
+        <div class="videoDetails__info-wrapper">
+          <div class="videoDetails__info-wrapper-views">
+            <img
+              className="videoDetails__info-wrapper-views-img"
+              src={ViewsIcon}
+              alt="views icon"
+            />
+            <p>{selectedVideo.views}</p>
           </div>
-          <div class="videoDetails__info-wrapper">
-            <div class="videoDetails__info-wrapper-views">
-              <img
-                className="videoDetails__info-wrapper-views-img"
-                src={ViewsIcon}
-                alt="views icon"
-              />
-              <p>{selectedVideo.views}</p>
-            </div>
-            <div class="videoDetails__info-wrapper-likes">
-              <img
-                className="videoDetails__info-wrapper-likes-img"
-                src={LikesIcon}
-                alt="likes icon"
-              />
-              <p>{selectedVideo.likes}</p>
-            </div>
+          <div class="videoDetails__info-wrapper-likes">
+            <img
+              className="videoDetails__info-wrapper-likes-img"
+              src={LikesIcon}
+              alt="likes icon"
+            />
+            <p>{selectedVideo.likes}</p>
           </div>
         </div>
-        <div class="videoDetails__description">
-          <p>{selectedVideo.description}</p>
-        </div>
-      </section>
-    </div>
+      </div>
+      <div class="videoDetails__description">
+        <p>{selectedVideo.description}</p>
+      </div>
+    </section>
   );
 }

@@ -1,3 +1,92 @@
 @use "../../styles/partials/resets" as *;
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
+
+.comments {
+  padding: 0 1rem;
+
+  @include tablet-and-desktop {
+    padding: 0 2.25rem;
+  }
+
+  &__input {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 1rem 0;
+    border-bottom: 1px solid $mercury-grey;
+  }
+
+  &__input-avatar {
+    height: 2.25rem;
+    width: 2.25rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 1.5rem 1rem 0 0;
+
+    @include tablet-and-desktop {
+      height: 2.5rem;
+      width: 2.5rem;
+    }
+  }
+
+  &__input-label {
+    color: $silver-grey;
+    font-weight: 600;
+    font-size: smaller;
+    line-height: 1.5rem;
+  }
+
+  &__input-form {
+    width: 100%;
+    @include flex-column;
+    justify-content: flex-start;
+  }
+
+  &__input-form-text {
+    width: 100%;
+    background-color: $albaster-white;
+    border: 2px solid $mercury-grey;
+    border-radius: 0.25rem;
+    font-family: "Avenir Next Pro Lt", "Avenir";
+    padding: 0.5rem 0.75rem;
+    height: 5.5rem;
+    margin-bottom: 1rem;
+    resize: none;
+    box-sizing: border-box;
+
+    &::placeholder {
+      color: $brainflix-darkblack;
+    }
+
+    @include tablet-and-desktop {
+      height: 2.5rem;
+    }
+  }
+
+  &__input-form-btn {
+    @include background-iconImg;
+    background-image: url("../../assets/Images/Icons/add_comment.svg");
+    @include button;
+
+    &:hover {
+      background-color: $brainflix-darkblue;
+    }
+
+    @include tablet-and-desktop {
+      max-width: 13.5rem;
+      padding: 0 2rem;
+    }
+  }
+
+  &__input-form-wrapper {
+    @include tablet-and-desktop {
+      @include flex-row;
+      gap: 1rem;
+    }
+  }
+
+  &__number {
+    font-weight: 600;
+  }
+}

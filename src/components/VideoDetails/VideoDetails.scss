@@ -3,10 +3,10 @@
 @use "../../styles/partials/variables" as *;
 
 .videoDetails {
-  padding: 1rem;
+  padding: 1.5rem 1rem 1rem;
 
   @include tablet-and-desktop {
-    padding: 1.5rem 2.5rem;
+    padding: 2.25rem;
   }
 
   &__title {
@@ -16,6 +16,7 @@
     @include tablet-and-desktop {
       font-size: xx-large;
       font-weight: 900;
+      padding-bottom: 1.5rem;
     }
   }
 
@@ -70,7 +71,6 @@
 
   &__info-wrapper-channel {
     font-weight: 600;
-    color: $brainflix-black;
 
     @include tablet-and-desktop {
       font-weight: 900;
