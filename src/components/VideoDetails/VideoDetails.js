@@ -20,7 +20,7 @@ export default function VideoDetails() {
         <div class="videoDetails__info">
           <div class="videoDetails__info-wrapper">
             <p class="videoDetails__info-wrapper-channel">
-              {selectedVideo.channel}
+              By {selectedVideo.channel}
             </p>
             <p class="videoDetails__info-wrapper-date">
               {selectedVideo.timestamp}
