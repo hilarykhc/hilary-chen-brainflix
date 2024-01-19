@@ -1,10 +1,10 @@
 import "./Hero.scss";
 import { useState } from "react";
-import videoDetails from "../../data/video-details.json";
+import videoDetailsData from "../../data/video-details.json";
 
 export default function Hero() {
   const targetVideoId = "84e96018-4022-434e-80bf-000ce4cd12b8";
-  const selectedVideo = videoDetails.find(
+  const selectedVideo = videoDetailsData.find(
     (video) => video.id === targetVideoId
   );
 

@@ -1,0 +1,56 @@
+@use "../../styles/partials/resets" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.videoDetails {
+  padding: 1rem;
+
+  &__title {
+    color: $brainflix-black;
+    padding-bottom: 1rem;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: 1px solid $mercury-grey;
+    border-top: 1px solid $mercury-grey;
+  }
+
+  &__info-wrapper {
+    @include flex-column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  &__info-wrapper-views {
+    display: flex;
+    color: $silver-grey;
+    padding-right: 3rem;
+  }
+
+  &__info-wrapper-views-img {
+    padding-right: 0.5rem;
+  }
+
+  &__info-wrapper-likes {
+    @extend .videoDetails__info-wrapper-views;
+  }
+
+  &__videoDetails__info-wrapper-likes-img {
+    padding-right: 0.5rem;
+  }
+
+  &__info-wrapper-date {
+    color: $silver-grey;
+  }
+
+  &__info-wrapper-channel {
+    font-weight: 600;
+  }
+
+  &__description {
+    padding-top: 1rem;
+  }
+}
