@@ -5,6 +5,7 @@ import Hero from "./components/Hero/Hero";
 import videoDetailsData from "../src/data/video-details.json";
 import VideoDetails from "./components/VideoDetails/VideoDetails";
 import Comments from "./components/Comments/Comments";
+import VideoList from "./components/VideoList/VideoList";
 
 function App() {
   return (
@@ -17,7 +18,9 @@ function App() {
             <VideoDetails />
             <Comments />
           </div>
-          <div></div>
+          <div>
+            <VideoList />
+          </div>
         </div>
       </main>
     </body>

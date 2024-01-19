@@ -1,0 +1,23 @@
+@use "../../styles/partials/resets" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.videoList {
+  padding: 1rem;
+
+  @include tablet-and-desktop {
+    padding: 0 2.25rem;
+  }
+
+  &__title {
+    color: #afafaf;
+    font-weight: 600;
+    font-size: smaller;
+    line-height: 1.5rem;
+    padding-bottom: 1rem;
+
+    @include tablet-and-desktop {
+      padding-bottom: 1.5rem;
+    }
+  }
+}
