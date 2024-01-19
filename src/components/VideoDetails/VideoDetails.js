@@ -14,7 +14,7 @@ export default function VideoDetails() {
     return <div>Just a moment...</div>;
   }
   return (
-    <section classNameName="videoDetails">
+    <section className="videoDetails">
       <h1 className="videoDetails__title">{selectedVideo.title}</h1>
       <div className="videoDetails__info">
         <div className="videoDetails__info-wrapper">
