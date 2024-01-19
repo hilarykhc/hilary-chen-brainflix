@@ -14,25 +14,26 @@ export default function VideoList() {
       <p className="videoList__title">NEXT VIDEOS</p>
       <div className="videoList__wrapper">
         {videoData.map((video) => (
-          <div key={video.id} className="videoList__wrapper-item">
-            <a href="#">
-              <div>
-                <img
-                  src={video.image}
-                  alt={video.title}
-                  className="videoList__wrapper-item-img"
-                />
-              </div>
-              <div className="videoList__wrapper-item-info">
-                <p className="videoList__wrapper-item-info-title">
-                  {video.title}
-                </p>
-                <p className="videoList__wrapper-item-info-channel">
-                  {video.channel}
-                </p>
-              </div>
-            </a>
-          </div>
+          <>VideoCard</>
+          //   <div key={video.id} className="videoList__wrapper-item">
+          //     <a href="#">
+          //       <div>
+          //         <img
+          //           src={video.image}
+          //           alt={video.title}
+          //           className="videoList__wrapper-item-img"
+          //         />
+          //       </div>
+          //       <div className="videoList__wrapper-item-info">
+          //         <p className="videoList__wrapper-item-info-title">
+          //           {video.title}
+          //         </p>
+          //         <p className="videoList__wrapper-item-info-channel">
+          //           {video.channel}
+          //         </p>
+          //       </div>
+          //     </a>
+          //   </div>
         ))}
       </div>
     </section>
