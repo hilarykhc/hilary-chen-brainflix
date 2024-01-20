@@ -7,7 +7,7 @@ export default function VideoCard(props) {
   return (
     <div
       className="videoList__wrapper-card"
-      onclick={() => selectVideo(video.id)}
+      onClick={() => selectVideo(video.id)}
     >
       <article className="videoList__wrapper-card2">
         <div>
