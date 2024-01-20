@@ -6,7 +6,12 @@
   padding: 1rem;
 
   @include tablet-and-desktop {
-    padding: 0 2.25rem;
+    padding: 0 2.25rem 2.25rem;
+  }
+
+  @include desktop {
+    padding: 1.5rem 1rem;
+    border-left: 1px solid $mercury-grey;
   }
 
   &__title {
@@ -14,10 +19,9 @@
     font-weight: 600;
     font-size: smaller;
     line-height: 1.5rem;
-    padding-bottom: 1rem;
 
     @include tablet-and-desktop {
-      padding-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
     }
   }
 }

@@ -13,8 +13,8 @@ function App() {
       <Header />
       <main>
         <Hero />
-        <div>
-          <div>
+        <div className="div-container">
+          <div className="div-container2">
             <VideoDetails />
             <Comments />
           </div>

@@ -1,3 +1,15 @@
 @use "./styles/partials/resets" as *;
 @use "./styles/partials/typography" as *;
 @use "./styles/partials/variables" as *;
+@use "./styles/partials/mixins" as *;
+
+.div-container {
+  @include desktop {
+    display: flex;
+    padding: 0 5rem;
+  }
+}
+
+.div-container2 {
+  line-height: 1.65rem;
+}
