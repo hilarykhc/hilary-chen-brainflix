@@ -1,0 +1,12 @@
+@use "../../styles/partials/resets" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.videoList {
+  &__wrapper-item-img {
+    width: 8.5rem;
+    height: 4.5rem;
+    border-radius: 4px;
+    object-fit: cover;
+  }
+}
