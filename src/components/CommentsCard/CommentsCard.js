@@ -1,15 +1,15 @@
 import "./CommentsCard.scss";
-import videoDetailsData from "../../data/video-details.json";
+//import videoDetailsData from "../../data/video-details.json";
 
-export default function CommentsCard() {
-  const targetVideoId = "84e96018-4022-434e-80bf-000ce4cd12b8";
-  const selectedVideo = videoDetailsData.find(
-    (video) => video.id === targetVideoId
-  );
+export default function CommentsCard({ selectedVideo }) {
+  // const targetVideoId = "84e96018-4022-434e-80bf-000ce4cd12b8";
+  // const selectedVideo = videoDetailsData.find(
+  //   (video) => video.id === targetVideoId
+  // );
 
-  if (!selectedVideo) {
-    return <div>Comments loading...</div>;
-  }
+  // if (!selectedVideo) {
+  //   return <div>Comments loading...</div>;
+  // }
 
   return (
     <div className="comments__container">

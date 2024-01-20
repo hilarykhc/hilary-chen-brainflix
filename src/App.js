@@ -31,11 +31,11 @@ function App() {
     <body>
       <Header />
       <main>
-        <Hero />
+        <Hero selectedVideo={selectedVideo} />
         <div className="div-container">
           <div className="div-container2">
-            <VideoDetails />
-            <Comments />
+            <VideoDetails selectedVideo={selectedVideo} />
+            <Comments selectedVideo={selectedVideo} />
           </div>
           <div className="div-container3">
             <VideoList
