@@ -19,7 +19,7 @@ function App() {
             <VideoDetails />
             <Comments />
           </div>
-          <div>
+          <div className="div-container3">
             <VideoList />
           </div>
         </div>
