@@ -1,9 +1,14 @@
 import "./VideoCard.scss";
 //import videoData from "../../data/videos.json";
 
-export default function VideoCard({ video }) {
+export default function VideoCard(props) {
+  const { video, selectVideo } = props;
+
   return (
-    <div key={video.id} className="videoList__wrapper-card">
+    <div
+      className="videoList__wrapper-card"
+      onclick={() => selectVideo(video.id)}
+    >
       <article className="videoList__wrapper-card2">
         <div>
           <img
