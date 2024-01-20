@@ -3,6 +3,7 @@ import { Component } from "react";
 import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
 import videoDetailsData from "../src/data/video-details.json";
+import videoData from "../src/data/videos.json";
 import VideoDetails from "./components/VideoDetails/VideoDetails";
 import Comments from "./components/Comments/Comments";
 import VideoList from "./components/VideoList/VideoList";
