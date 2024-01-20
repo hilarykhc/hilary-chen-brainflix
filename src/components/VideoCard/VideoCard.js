@@ -3,22 +3,22 @@ import "./VideoCard.scss";
 
 export default function VideoCard({ video }) {
   return (
-    <div key={video.id} className="videoList__wrapper-item">
-      <a href="#">
+    <div key={video.id} className="videoList__wrapper-card">
+      <article className="videoList__wrapper-card2">
         <div>
           <img
             src={video.image}
             alt={video.title}
-            className="videoList__wrapper-item-img"
+            className="videoList__wrapper-card-img"
           />
         </div>
-        <div className="videoList__wrapper-item-info">
-          <p className="videoList__wrapper-item-info-title">{video.title}</p>
-          <p className="videoList__wrapper-item-info-channel">
+        <div className="videoList__wrapper-card-info">
+          <p className="videoList__wrapper-card-info-title">{video.title}</p>
+          <p className="videoList__wrapper-card-info-channel">
             {video.channel}
           </p>
         </div>
-      </a>
+      </article>
     </div>
   );
 }

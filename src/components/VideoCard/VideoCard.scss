@@ -3,10 +3,31 @@
 @use "../../styles/partials/variables" as *;
 
 .videoList {
-  &__wrapper-item-img {
+  &__wrapper-card-img {
     width: 8.5rem;
     height: 4.5rem;
     border-radius: 4px;
     object-fit: cover;
+    padding-right: 1rem;
+  }
+
+  &__wrapper-card {
+    padding-top: 1rem;
+  }
+
+  &__wrapper-card2 {
+    display: flex;
+    color: $brainflix-black;
+    cursor: pointer;
+  }
+
+  &__wrapper-card-info {
+    @include flex-column;
+    justify-content: space-between;
+    padding: 0.25rem 0;
+  }
+
+  &__wrapper-card-info-title {
+    font-weight: 600;
   }
 }
