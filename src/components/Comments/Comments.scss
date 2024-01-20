@@ -92,6 +92,10 @@
       @include flex-row;
       gap: 1rem;
     }
+
+    @include desktop {
+      padding-right: 1rem;
+    }
   }
 
   &__number {

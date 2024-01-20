@@ -45,6 +45,10 @@
     @include tablet-and-desktop {
       @include flex-row;
     }
+
+    @include desktop {
+      padding-right: 1rem;
+    }
   }
 
   &__info-wrapper-views {
@@ -83,5 +87,9 @@
 
   &__description {
     padding-top: 1rem;
+
+    @include desktop {
+      padding-right: 1rem;
+    }
   }
 }

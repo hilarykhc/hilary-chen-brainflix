@@ -22,6 +22,10 @@
     display: flex;
     justify-content: space-between;
     padding-bottom: 1rem;
+
+    @include desktop {
+      padding-right: 1rem;
+    }
   }
 
   &__card-wrapper2-date {
@@ -30,5 +34,11 @@
 
   &__card-wrapper2-name {
     font-weight: 600;
+  }
+
+  &__card-wrapper2-text {
+    @include desktop {
+      padding-right: 1rem;
+    }
   }
 }
