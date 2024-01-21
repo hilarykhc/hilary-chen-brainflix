@@ -11,12 +11,16 @@
 
     @include desktop {
       width: 10.5rem;
-      height: 6rem;
+      height: 5.5rem;
     }
   }
 
   &__wrapper-card {
     padding-top: 1rem;
+
+    @include desktop {
+      padding-top: 0.75rem;
+    }
   }
 
   &__wrapper-card2 {
