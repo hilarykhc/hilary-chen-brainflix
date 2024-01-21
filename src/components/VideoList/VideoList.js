@@ -1,5 +1,4 @@
 import "./VideoList.scss";
-//import videoData from "../../data/videos.json";
 import VideoCard from "../VideoCard/VideoCard";
 
 export default function VideoList(props) {
