@@ -22,7 +22,11 @@ export default function VideoDetails({ selectedVideo }) {
             By {selectedVideo.channel}
           </p>
           <p className="videoDetails__info-wrapper-date">
-            {selectedVideo.timestamp}
+            {new Date(selectedVideo.timestamp).toLocaleDateString("en-US", {
+              month: "2-digit",
+              day: "2-digit",
+              year: "numeric",
+            })}
           </p>
         </div>
         <div className="videoDetails__info-wrapper">
