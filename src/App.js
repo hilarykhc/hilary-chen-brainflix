@@ -1,6 +1,5 @@
 import "./App.scss";
 import { useState } from "react";
-//import { Component } from "react";
 import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
 
@@ -13,9 +12,7 @@ import VideoList from "./components/VideoList/VideoList";
 
 function App() {
   const [videos, setVideos] = useState(videoData);
-  // console.log(videos);
   const [selectedVideo, setSelectedVideo] = useState(videoDetailsData[0]);
-  // console.log(selectedVideo);
 
   const handleSelectVideo = (clickedId) => {
     const foundVideo = videoDetailsData.find((video) => clickedId === video.id);
