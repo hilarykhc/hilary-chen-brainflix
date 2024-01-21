@@ -1,27 +1,22 @@
 @use "../../styles/partials/resets" as *;
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
-@use "../../styles/partials/typography" as *;
 
 .videoList {
   &__wrapper-card-img {
     width: 8.5rem;
-    height: 4.5rem;
+    height: 5.5rem;
     border-radius: 4px;
     object-fit: cover;
 
     @include desktop {
       width: 10.5rem;
-      height: 5.5rem;
+      height: 6rem;
     }
   }
 
   &__wrapper-card {
     padding-top: 1rem;
-
-    @include desktop {
-      padding-top: 0.75rem;
-    }
   }
 
   &__wrapper-card2 {
@@ -33,7 +28,7 @@
   &__wrapper-card-info {
     @include flex-column;
     justify-content: space-between;
-    padding: 0.25rem 1rem;
+    padding: 0.25rem 0 0.25rem 1rem;
   }
 
   &__wrapper-card-info-title {
