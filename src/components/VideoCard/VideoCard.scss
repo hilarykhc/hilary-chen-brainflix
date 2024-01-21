@@ -9,11 +9,19 @@
     height: 4.5rem;
     border-radius: 4px;
     object-fit: cover;
-    padding-right: 1rem;
+
+    @include desktop {
+      width: 10.5rem;
+      height: 5.5rem;
+    }
   }
 
   &__wrapper-card {
     padding-top: 1rem;
+
+    @include desktop {
+      padding-top: 0.75rem;
+    }
   }
 
   &__wrapper-card2 {
@@ -25,7 +33,7 @@
   &__wrapper-card-info {
     @include flex-column;
     justify-content: space-between;
-    padding: 0.25rem 0;
+    padding: 0.25rem 1rem;
   }
 
   &__wrapper-card-info-title {
