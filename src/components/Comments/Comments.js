@@ -1,5 +1,4 @@
 import "./Comments.scss";
-//import videoDetailsData from "../../data/video-details.json";
 import avatar from "../../assets/Images/Mohan-muruge.jpg";
 import CommentsCard from "../CommentsCard/CommentsCard";
 

@@ -1,5 +1,4 @@
 import "./VideoCard.scss";
-//import videoData from "../../data/videos.json";
 
 export default function VideoCard(props) {
   const { video, selectVideo } = props;
