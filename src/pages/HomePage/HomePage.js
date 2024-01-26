@@ -105,7 +105,7 @@ export default function HomePage() {
       <div className="div-container">
         <div className="div-container2">
           <VideoDetails selectedVideo={currentSelectedVideo} />
-          {/* <Comments selectedVideoId={currentSelectedVideo.id} /> */}
+          <Comments selectedVideoId={currentSelectedVideo.comments} />
         </div>
         <div className="div-container3">
           <VideoList videos={filteredVideos} selectVideo={handleSelectVideo} />

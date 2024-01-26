@@ -11,7 +11,7 @@ export default function CommentsCard({ selectedVideoId }) {
   return (
     <div className="comments__container">
       {selectedVideoId &&
-        selectedVideoId.comments.map((comment) => (
+        selectedVideoId.map((comment) => (
           <div key={comment.id} className="comments__card">
             <div className="comments__card-wrapper1">
               <div className="comments__card-img"></div>

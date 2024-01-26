@@ -6,6 +6,8 @@ export default function VideoDetails({ selectedVideo }) {
   // if (!selectedVideo) {
   //   return null;
   // }
+
+  console.log(selectedVideo);
   return (
     <section className="videoDetails">
       <h1 className="videoDetails__title">{selectedVideo.title}</h1>
