@@ -12,54 +12,45 @@ import axios from "axios";
 import HomePage from "./pages/HomePage/HomePage";
 
 export default function App() {
-  // const [videos, setVideos] = useState([]);
-  // const [selectedVideo, setSelectedVideo] = useState(null);
-
-  // useEffect(() => {
-  //   const baseUrl = "https://project-2-api.herokuapp.com/videos";
-  //   const apiKey = "2bd1529e-9731-4ea5-974c-934934bdc239";
-
-  //   const fetchVideos = async () => {
-  //     try {
-  //       const response = await axios.get(`${baseUrl}?api_key=${apiKey}`);
-  //       setVideos(response.data);
-  //       console.log(response.data);
-
-  //       //set default video
-  //       setSelectedVideo(response.data[0]);
-  //     } catch (error) {
-  //       console.error("Error fetching videos:", error);
-  //     }
-  //   };
-
-  //   fetchVideos();
-  // }, []);
-
-  // const handleSelectVideo = (clickedId) => {
-  //   const foundVideo = videos.find((video) => clickedId === video.id);
-  //   setSelectedVideo(foundVideo);
-  // };
-
   return (
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route
-          path="/"
-          element={
-            <HomePage
-            // videos={videos}
-            // selectedVideo={selectedVideo}
-            // handleSelectVideo={handleSelectVideo}
-            />
-          }
-        />
+        <Route path="/" element={<HomePage />} />
         <Route path="/videos/:videoId" element={<HomePage />} />
-        {/* <Route path="/upload" element={UploadPage} /> */}
+        {/* <Route path="/upload" element={<UploadPage />} /> */}
       </Routes>
     </BrowserRouter>
   );
 }
+
+// const [videos, setVideos] = useState([]);
+// const [selectedVideo, setSelectedVideo] = useState(null);
+
+// useEffect(() => {
+//   const baseUrl = "https://project-2-api.herokuapp.com/videos";
+//   const apiKey = "2bd1529e-9731-4ea5-974c-934934bdc239";
+
+//   const fetchVideos = async () => {
+//     try {
+//       const response = await axios.get(`${baseUrl}?api_key=${apiKey}`);
+//       setVideos(response.data);
+//       console.log(response.data);
+
+//       //set default video
+//       setSelectedVideo(response.data[0]);
+//     } catch (error) {
+//       console.error("Error fetching videos:", error);
+//     }
+//   };
+
+//   fetchVideos();
+// }, []);
+
+// const handleSelectVideo = (clickedId) => {
+//   const foundVideo = videos.find((video) => clickedId === video.id);
+//   setSelectedVideo(foundVideo);
+// };
 
 // return (
 //   <BrowserRouter>

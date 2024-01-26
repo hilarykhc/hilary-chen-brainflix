@@ -2,8 +2,9 @@ import "./Comments.scss";
 import avatar from "../../assets/Images/Mohan-muruge.jpg";
 import CommentsCard from "../CommentsCard/CommentsCard";
 
-export default function Comments({ selectedVideoId }) {
-  console.log(selectedVideoId);
+export default function Comments({ selectedVideo }) {
+  console.log(selectedVideo);
+
   return (
     <section className="comments">
       <p className="comments__number">3 Comments</p>
@@ -27,7 +28,7 @@ export default function Comments({ selectedVideoId }) {
         </form>
       </div>
 
-      <CommentsCard selectedVideoId={selectedVideoId} />
+      <CommentsCard selectedVideo={selectedVideo} />
     </section>
   );
 }

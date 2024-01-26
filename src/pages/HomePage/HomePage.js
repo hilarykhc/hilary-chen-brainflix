@@ -18,7 +18,6 @@ export default function HomePage() {
   const searchSingleVideo = (videoId) =>
     `${baseUrl}/${videoId}?api_key=${apiKey}`;
 
-  // moving them up here for now
   // videoId to find selected video
   const selectedVideoFromParams = videos.find((video) => video.id === videoId);
 
@@ -26,63 +25,88 @@ export default function HomePage() {
   const currentSelectedVideo = selectedVideoFromParams || selectedVideo;
 
   const filteredVideos = videos.filter(
-    (video) => video.id !== currentSelectedVideo?.id
+    (video) => video.id !== selectedVideo?.id
   );
+
+  // unwrapping useEffect
+  const fetchVideos = async () => {
+    try {
+      const response = await axios.get(`${baseUrl}?api_key=${apiKey}`);
+      setVideos(response.data);
+      if (!videoId && response.data.length > 0) {
+        fetchSingleVideo(response.data[0].id);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchVideos();
+  }, []);
+
+  const fetchSingleVideo = async (videoId) => {
+    try {
+      const response = await axios.get(
+        `${baseUrl}/${videoId}?api_key=${apiKey}`
+      );
+      setSelectedVideo(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    if (videoId) {
+      fetchSingleVideo(videoId || "84e96018-4022-434e-80bf-000ce4cd12b8"); // pass id for default.
+    }
+  }, [videoId]);
 
   //
 
-  useEffect(() => {
-    const fetchVideos = async () => {
-      try {
-        const response = await axios.get(`${baseUrl}?api_key=${apiKey}`);
-        setVideos(response.data);
+  // commenting out lines 66 to 105 -----------------------------------------
+  // get all videos
+  //   useEffect(() => {
+  //     const fetchVideos = async () => {
+  //       try {
+  //         const response = await axios.get(`${baseUrl}?api_key=${apiKey}`);
+  //         setVideos(response.data);
 
-        //set default
-        setSelectedVideo(response.data[0]);
-        // console.log(response.data[0]);
-      } catch (error) {
-        console.error("error fetching videos", error);
-      }
-    };
+  //         //set default
+  //         setSelectedVideo(response.data[0]);
+  //         // console.log(response.data[0]);
+  //       } catch (error) {
+  //         console.error("error fetching videos", error);
+  //       }
+  //     };
 
-    fetchVideos();
-  }, []);
-  //   console.log(selectedVideo);
+  //     fetchVideos();
+  //   }, []);
 
-  //get single video, i've got this!!!
+  //   //get single video
   //   useEffect(() => {
   //     const fetchSingleVideo = async () => {
-  //       try {
-  //         const response = await axios.get(`${baseUrl}/${videoId}?api_key=${apiKey}`);
-  //         setSelectedVideo(response.data);
-  //       } catch (error) {
-  //         console.error(error);
+  //       if (selectedVideo) {
+  //         // const searchSingleVideo = (videoId) =>
+  //         //   `${baseUrl}/${videoId}?api_key=${apiKey}`;
+  //         try {
+  //           if (selectedVideo && selectedVideo.id) {
+  //             // if (selectedVideo.id) {
+  //             const { data } = await axios.get(
+  //               searchSingleVideo(selectedVideo.id)
+  //             );
+  //             setSelectedVideo(data);
+  //           }
+  //         } catch (error) {
+  //           console.error(error);
+  //         }
   //       }
   //     };
   //     fetchSingleVideo();
-  //   }, [videoId]);
+  //     //   }, [currentSelectedVideo.id]);
+  //   }, [videos, videoId]);
 
-  //get single video lines 54-73
-  useEffect(() => {
-    const fetchSingleVideo = async () => {
-      if (selectedVideo) {
-        // const searchSingleVideo = (videoId) =>
-        //   `${baseUrl}/${videoId}?api_key=${apiKey}`;
-        try {
-          if (selectedVideo && selectedVideo.id) {
-            // if (selectedVideo.id) {
-            const { data } = await axios.get(
-              searchSingleVideo(selectedVideo.id)
-            );
-            setSelectedVideo(data);
-          }
-        } catch (error) {
-          console.error(error);
-        }
-      }
-    };
-    fetchSingleVideo();
-  }, [currentSelectedVideo.id]);
+  // commenting out lines 66 to 105 -----------------------------------------
 
   const handleSelectVideo = (clickedId) => {
     const foundVideo = videos.find((video) => clickedId === video.id);
@@ -104,11 +128,11 @@ export default function HomePage() {
       <Hero selectedVideo={currentSelectedVideo} />
       <div className="div-container">
         <div className="div-container2">
-          <VideoDetails selectedVideo={currentSelectedVideo} />
-          <Comments selectedVideoId={currentSelectedVideo.comments} />
+          <VideoDetails selectedVideo={selectedVideo} />
+          <Comments selectedVideo={selectedVideo.comments} />
         </div>
         <div className="div-container3">
-          <VideoList videos={filteredVideos} selectVideo={handleSelectVideo} />
+          <VideoList videos={videos} selectVideo={handleSelectVideo} />
         </div>
       </div>
     </div>

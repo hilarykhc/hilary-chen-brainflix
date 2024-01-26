@@ -2,16 +2,16 @@ import "./CommentsCard.scss";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-export default function CommentsCard({ selectedVideoId }) {
+export default function CommentsCard({ selectedVideo }) {
   // if (!selectedVideo) {
   //   return null;
   // }
-  console.log(selectedVideoId);
+  console.log(selectedVideo);
 
   return (
     <div className="comments__container">
-      {selectedVideoId &&
-        selectedVideoId.map((comment) => (
+      {selectedVideo &&
+        selectedVideo.map((comment) => (
           <div key={comment.id} className="comments__card">
             <div className="comments__card-wrapper1">
               <div className="comments__card-img"></div>
