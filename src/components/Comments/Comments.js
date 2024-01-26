@@ -2,14 +2,15 @@ import "./Comments.scss";
 import avatar from "../../assets/Images/Mohan-muruge.jpg";
 import CommentsCard from "../CommentsCard/CommentsCard";
 
-export default function Comments({ selectedVideo }) {
+export default function Comments({ selectedVideoId }) {
+  console.log(selectedVideoId);
   return (
     <section className="comments">
       <p className="comments__number">3 Comments</p>
       <div className="comments__input">
         <img src={avatar} alt="user image" className="comments__input-avatar" />
         <form action="#" className="comments__input-form">
-          <label for="comments-input" className="comments__input-label">
+          <label htmlFor="comments-input" className="comments__input-label">
             JOIN THE CONVERSATION
           </label>
           <div className="comments__input-form-wrapper">
@@ -26,7 +27,7 @@ export default function Comments({ selectedVideo }) {
         </form>
       </div>
 
-      <CommentsCard selectedVideo={selectedVideo} />
+      <CommentsCard selectedVideoId={selectedVideoId} />
     </section>
   );
 }

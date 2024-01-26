@@ -3,6 +3,9 @@ import ViewsIcon from "../../assets/Images/Icons/views.svg";
 import LikesIcon from "../../assets/Images/Icons/likes.svg";
 
 export default function VideoDetails({ selectedVideo }) {
+  // if (!selectedVideo) {
+  //   return null;
+  // }
   return (
     <section className="videoDetails">
       <h1 className="videoDetails__title">{selectedVideo.title}</h1>
