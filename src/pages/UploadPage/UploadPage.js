@@ -1,8 +1,8 @@
-import { Link, UseNavigate } from "react-router-dom";
-import uploadThumbnail from "../../../assets/Images/Upload-video-preview.jpg";
+import { useNavigate } from "react-router-dom";
+import uploadThumbnail from "../../assets/Images/Upload-video-preview.jpg";
 
 export default function UploadPage() {
-  const navigate = UseNavigate();
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();

@@ -10,7 +10,7 @@ import Comments from "./components/Comments/Comments";
 import VideoList from "./components/VideoList/VideoList";
 import axios from "axios";
 import HomePage from "./pages/HomePage/HomePage";
-import UploadPage from "./pages/HomePage/UploadPage/UploadPage";
+import UploadPage from "./pages/UploadPage/UploadPage";
 
 export default function App() {
   return (
