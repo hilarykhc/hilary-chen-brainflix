@@ -1,5 +1,6 @@
 import { useEffect, useNavigate, Link } from "react-router-dom";
 import uploadThumbnail from "../../assets/Images/Upload-video-preview.jpg";
+import "./UploadPage.scss";
 
 export default function UploadPage() {
   const navigate = useNavigate();
