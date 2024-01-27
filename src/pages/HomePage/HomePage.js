@@ -66,45 +66,45 @@ export default function HomePage() {
 
   // commenting out lines 66 to 105 -----------------------------------------
   // get all videos
-  //   useEffect(() => {
-  //     const fetchVideos = async () => {
+  // useEffect(() => {
+  //   const fetchVideos = async () => {
+  //     try {
+  //       const response = await axios.get(`${baseUrl}?api_key=${apiKey}`);
+  //       setVideos(response.data);
+
+  //       //set default
+  //       setSelectedVideo(response.data[0]);
+  //       // console.log(response.data[0]);
+  //     } catch (error) {
+  //       console.error("error fetching videos", error);
+  //     }
+  //   };
+
+  //   fetchVideos();
+  // }, []);
+
+  // //get single video
+  // useEffect(() => {
+  //   const fetchSingleVideo = async () => {
+  //     if (selectedVideo) {
+  //       // const searchSingleVideo = (videoId) =>
+  //       //   `${baseUrl}/${videoId}?api_key=${apiKey}`;
   //       try {
-  //         const response = await axios.get(`${baseUrl}?api_key=${apiKey}`);
-  //         setVideos(response.data);
-
-  //         //set default
-  //         setSelectedVideo(response.data[0]);
-  //         // console.log(response.data[0]);
-  //       } catch (error) {
-  //         console.error("error fetching videos", error);
-  //       }
-  //     };
-
-  //     fetchVideos();
-  //   }, []);
-
-  //   //get single video
-  //   useEffect(() => {
-  //     const fetchSingleVideo = async () => {
-  //       if (selectedVideo) {
-  //         // const searchSingleVideo = (videoId) =>
-  //         //   `${baseUrl}/${videoId}?api_key=${apiKey}`;
-  //         try {
-  //           if (selectedVideo && selectedVideo.id) {
-  //             // if (selectedVideo.id) {
-  //             const { data } = await axios.get(
-  //               searchSingleVideo(selectedVideo.id)
-  //             );
-  //             setSelectedVideo(data);
-  //           }
-  //         } catch (error) {
-  //           console.error(error);
+  //         if (selectedVideo && selectedVideo.id) {
+  //           // if (selectedVideo.id) {
+  //           const { data } = await axios.get(
+  //             searchSingleVideo(selectedVideo.id)
+  //           );
+  //           setSelectedVideo(data);
   //         }
+  //       } catch (error) {
+  //         console.error(error);
   //       }
-  //     };
-  //     fetchSingleVideo();
-  //     //   }, [currentSelectedVideo.id]);
-  //   }, [videos, videoId]);
+  //     }
+  //   };
+  //   fetchSingleVideo();
+  //   //   }, [currentSelectedVideo.id]);
+  // }, [videos, videoId]);
 
   // commenting out lines 66 to 105 -----------------------------------------
 
