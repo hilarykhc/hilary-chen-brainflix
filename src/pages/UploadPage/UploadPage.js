@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useEffect, useNavigate, Link } from "react-router-dom";
 import uploadThumbnail from "../../assets/Images/Upload-video-preview.jpg";
 
 export default function UploadPage() {
@@ -24,15 +24,34 @@ export default function UploadPage() {
                 src={uploadThumbnail}
               ></img>
             </div>
-            <div className="upload__form-content"></div>
+            <div className="upload__form-content">
+              <label className="upload__form-subtitle" htmlFor="subtitle">
+                TITLE YOUR VIDEO
+              </label>
+              <input
+                className="upload__form-subtitle-input"
+                name="subtitle"
+                id="subtitle"
+                placeholder="Add a title to your video"
+              ></input>
+              <label className="upload__form-subtitle" htmlFor="description">
+                ADD A VIDEO DESCRIPTION
+              </label>
+              <textarea
+                className="upload__form-subtitle-description"
+                name="description"
+                id="description"
+                placeholder="Add a description to your video"
+              ></textarea>
+            </div>
           </form>
           <div className="upload__buttons">
             <button className="upload__button-publish">
               <p className="upload__button-publish-title">PUBLISH</p>
             </button>
-            <a className="upload__button-cancel" href="/">
-              CANCEL
-            </a>
+            <Link to="/">
+              <p className="upload__button-cancel">CANCEL</p>
+            </Link>
           </div>
         </div>
       </div>

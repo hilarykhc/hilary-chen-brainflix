@@ -7,13 +7,13 @@ export default function Header() {
   return (
     <header className="header">
       <Link to="/">
-        <a className="header__link" href="#">
+        <p className="header__link">
           <img
             className="header__logo"
             src={brainFlixLogo}
             alt="BrainFlix logo"
           />
-        </a>
+        </p>
       </Link>
 
       <div className="header__search">
