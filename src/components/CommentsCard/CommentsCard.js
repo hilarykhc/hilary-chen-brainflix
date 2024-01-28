@@ -1,13 +1,6 @@
 import "./CommentsCard.scss";
-import axios from "axios";
-import { useEffect, useState } from "react";
 
 export default function CommentsCard({ selectedVideo }) {
-  // if (!selectedVideo) {
-  //   return null;
-  // }
-  console.log(selectedVideo);
-
   return (
     <div className="comments__container">
       {selectedVideo &&

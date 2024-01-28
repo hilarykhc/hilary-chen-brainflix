@@ -3,8 +3,6 @@ import avatar from "../../assets/Images/Mohan-muruge.jpg";
 import CommentsCard from "../CommentsCard/CommentsCard";
 
 export default function Comments({ selectedVideo }) {
-  console.log(selectedVideo);
-
   return (
     <section className="comments">
       <p className="comments__number">3 Comments</p>
