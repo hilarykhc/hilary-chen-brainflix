@@ -4,7 +4,59 @@
 @use "../../styles/partials/typography" as *;
 
 .upload {
+  &__container {
+    margin: 0 1rem;
+  }
+
   &__button-publish {
     @include button;
+    background-image: url("../../assets/Images/Icons/publish.svg");
+    @include background-iconImg;
+    &:hover {
+      background-color: $brainflix-darkblue;
+    }
+  }
+
+  &__button-cancel {
+    @include button;
+    color: $brainflix-blue;
+    background-color: $pure-white;
+  }
+
+  &__button-cancel-link {
+    text-decoration: none;
+  }
+
+  &__form-image {
+    width: 100%;
+    border-radius: 0.25rem;
+  }
+
+  &__form-thumbnail {
+    color: #afafaf;
+    font-weight: 600;
+    font-size: smaller;
+    line-height: 1.5rem;
+  }
+
+  &__form-subtitle {
+    @extend .upload__form-thumbnail;
+  }
+
+  &__form-content {
+    @include flex-column;
+  }
+
+  &__form-subtitle-input {
+    @include input;
+    padding: 0.65rem;
+
+    &:active {
+      outline: 2px solid $brainflix-blue;
+    }
+  }
+
+  &__form-subtitle-description {
+    @include textarea;
   }
 }

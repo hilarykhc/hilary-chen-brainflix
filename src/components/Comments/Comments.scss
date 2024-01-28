@@ -48,28 +48,7 @@
   }
 
   &__input-form-text {
-    width: 100%;
-    background-color: $albaster-white;
-    border: 1px solid $mercury-grey;
-    border-radius: 0.25rem;
-    font-family: "Avenir Next Pro Lt", "Avenir";
-    padding: 0.5rem 0.75rem;
-    height: 5.5rem;
-    margin-bottom: 1rem;
-    resize: none;
-    box-sizing: border-box;
-
-    &::placeholder {
-      color: $brainflix-darkblack;
-    }
-
-    &:active {
-      outline: 2px solid $brainflix-blue;
-    }
-
-    @include tablet-and-desktop {
-      height: 2.5rem;
-    }
+    @include textarea;
   }
 
   &__input-form-btn {

@@ -5,7 +5,7 @@ import "./UploadPage.scss";
 export default function UploadPage() {
   const navigate = useNavigate();
 
-  const handleSubmit = (event) => {
+  const handlePublish = (event) => {
     event.preventDefault();
     alert("Your upload was successful!");
     navigate("/");
@@ -47,10 +47,10 @@ export default function UploadPage() {
             </div>
           </form>
           <div className="upload__buttons">
-            <button className="upload__button-publish">
-              <p className="upload__button-publish-title">PUBLISH</p>
+            <button onClick={handlePublish} className="upload__button-publish">
+              PUBLISH
             </button>
-            <Link to="/">
+            <Link to="/" className="upload__button-cancel-link">
               <p className="upload__button-cancel">CANCEL</p>
             </Link>
           </div>
