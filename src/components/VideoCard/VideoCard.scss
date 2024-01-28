@@ -4,8 +4,8 @@
 
 .videoList {
   &__wrapper-card-img {
-    width: 8.5rem;
-    height: 5.5rem;
+    width: 7rem;
+    height: 4.5rem;
     border-radius: 4px;
     object-fit: cover;
 
@@ -32,7 +32,8 @@
   &__wrapper-card-info {
     @include flex-column;
     justify-content: space-between;
-    padding: 0.25rem 0 0.25rem 1rem;
+    padding: 0 0 0.25rem 1rem;
+    font-size: 0.925rem;
   }
 
   &__wrapper-card-info-title {

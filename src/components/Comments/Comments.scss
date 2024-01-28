@@ -49,6 +49,10 @@
 
   &__input-form-text {
     @include textarea;
+
+    @include tablet-and-desktop {
+      height: 2.5rem;
+    }
   }
 
   &__input-form-btn {
@@ -79,5 +83,6 @@
 
   &__number {
     font-weight: 600;
+    font-size: 0.925rem;
   }
 }

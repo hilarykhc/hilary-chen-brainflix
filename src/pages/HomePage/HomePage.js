@@ -5,6 +5,7 @@ import VideoList from "../../components/VideoList/VideoList";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import "./HomePage.scss";
 
 export default function HomePage() {
   const [videos, setVideos] = useState([]);

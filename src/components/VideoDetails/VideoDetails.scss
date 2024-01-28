@@ -17,6 +17,8 @@
   &__title {
     color: $brainflix-black;
     padding-bottom: 1rem;
+    font-weight: 600;
+    line-height: 2rem;
 
     @include tablet-and-desktop {
       font-size: xx-large;
@@ -32,6 +34,7 @@
     padding: 1rem 0;
     border-bottom: 1px solid $mercury-grey;
     border-top: 1px solid $mercury-grey;
+    font-size: 0.925rem;
 
     @include tablet-and-desktop {
       border-top: none;
@@ -89,6 +92,7 @@
 
   &__description {
     padding-top: 1rem;
+    font-size: 0.925rem;
 
     @include desktop {
       padding-right: 1rem;
