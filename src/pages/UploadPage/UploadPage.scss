@@ -6,14 +6,40 @@
 .upload {
   &__container {
     margin: 0 1rem;
+
+    @include tablet-and-desktop {
+      margin: 0 2.25rem;
+    }
+
+    @include desktop {
+      margin: 0 6.75rem;
+    }
+  }
+
+  &__title {
+    @include tablet-and-desktop {
+      border-bottom: 1px solid $mercury-grey;
+    }
+  }
+
+  &__buttons {
+    @include tablet-and-desktop {
+      display: flex;
+      flex-direction: row-reverse;
+    }
   }
 
   &__button-publish {
     @include button;
     background-image: url("../../assets/Images/Icons/publish.svg");
     @include background-iconImg;
+    font-weight: bold;
     &:hover {
       background-color: $brainflix-darkblue;
+    }
+
+    @include tablet-and-desktop {
+      max-width: 11rem;
     }
   }
 
@@ -21,15 +47,30 @@
     @include button;
     color: $brainflix-blue;
     background-color: $pure-white;
+    font-weight: bold;
+
+    @include tablet-and-desktop {
+      margin-right: 6rem;
+    }
   }
 
   &__button-cancel-link {
     text-decoration: none;
   }
 
+  &__form {
+    @include desktop {
+      display: flex;
+    }
+  }
+
   &__form-image {
     width: 100%;
     border-radius: 0.25rem;
+
+    @include tablet-and-desktop {
+      width: 21.5rem;
+    }
   }
 
   &__form-thumbnail {
@@ -45,6 +86,11 @@
 
   &__form-content {
     @include flex-column;
+
+    @include desktop {
+      margin-left: 1rem;
+      width: 100%;
+    }
   }
 
   &__form-subtitle-input {
@@ -59,4 +105,8 @@
   &__form-subtitle-description {
     @include textarea;
   }
+}
+
+.header {
+  border-bottom: 1px solid $mercury-grey;
 }

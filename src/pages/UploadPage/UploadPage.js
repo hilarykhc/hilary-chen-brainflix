@@ -1,4 +1,4 @@
-import { useEffect, useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import uploadThumbnail from "../../assets/Images/Upload-video-preview.jpg";
 import "./UploadPage.scss";
 
