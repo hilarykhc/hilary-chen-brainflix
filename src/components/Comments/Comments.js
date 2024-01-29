@@ -1,11 +1,17 @@
 import "./Comments.scss";
 import avatar from "../../assets/Images/Mohan-muruge.jpg";
 import CommentsCard from "../CommentsCard/CommentsCard";
+import { CommentsCountContext } from "../../App";
+import { useContext } from "react";
 
 export default function Comments({ selectedVideo }) {
+  const { commentsCount } = useContext(CommentsCountContext);
+
   return (
     <section className="comments">
-      <p className="comments__number">3 Comments</p>
+      <p className="comments__number">{`${commentsCount} Comment${
+        commentsCount !== 1 ? "s" : ""
+      }`}</p>
       <div className="comments__input">
         <img src={avatar} alt="user image" className="comments__input-avatar" />
         <form action="#" className="comments__input-form">

@@ -2,15 +2,17 @@ import Hero from "../../components/Hero/Hero";
 import VideoDetails from "../../components/VideoDetails/VideoDetails";
 import Comments from "../../components/Comments/Comments";
 import VideoList from "../../components/VideoList/VideoList";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import "./HomePage.scss";
+import { CommentsCountContext } from "../../App";
 
 export default function HomePage() {
   const [videos, setVideos] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState([]);
   const { videoId = "" } = useParams();
+  const { setCommentsCount } = useContext(CommentsCountContext);
 
   const baseUrl = "https://project-2-api.herokuapp.com/videos";
   const apiKey = "2bd1529e-9731-4ea5-974c-934934bdc239";
@@ -36,6 +38,7 @@ export default function HomePage() {
           `${baseUrl}/${singleVideo}?api_key=${apiKey}`
         );
         setSelectedVideo(singleVideoRes.data);
+        setCommentsCount(singleVideoRes.data.comments.length);
       } catch (error) {
         console.error(error);
       }
@@ -46,7 +49,13 @@ export default function HomePage() {
 
   const handleSelectVideo = (clickedId) => {
     const foundVideo = videos.find((video) => clickedId === video.id);
-    setSelectedVideo(foundVideo);
+
+    if (foundVideo && foundVideo.comments) {
+      setSelectedVideo(foundVideo);
+      setCommentsCount(foundVideo.comments.length);
+    } else {
+      console.log("error");
+    }
   };
 
   return (
