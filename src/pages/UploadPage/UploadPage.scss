@@ -19,11 +19,13 @@
   &__title {
     padding: 1.5rem 0 1.5rem;
     font-weight: 600;
+    font-size: x-large;
 
     @include tablet-and-desktop {
       border-bottom: 1px solid $mercury-grey;
       font-weight: 700;
       padding: 2.25rem 0 1.5rem;
+      font-size: xx-large;
     }
   }
 
@@ -55,9 +57,12 @@
     background-color: $pure-white;
     font-weight: bold;
     font-size: smaller;
+    margin-top: 1.5rem;
+    padding-bottom: 1rem;
 
     @include tablet-and-desktop {
       margin-right: 6rem;
+      margin-top: 0;
     }
   }
 
