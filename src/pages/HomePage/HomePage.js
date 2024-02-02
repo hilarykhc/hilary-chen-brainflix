@@ -8,14 +8,16 @@ import axios from "axios";
 import "./HomePage.scss";
 import { CommentsCountContext } from "../../App";
 
+// const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
+
 export default function HomePage() {
   const [videos, setVideos] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState([]);
   const { videoId = "" } = useParams();
   const { setCommentsCount } = useContext(CommentsCountContext);
 
-  const baseUrl = "https://project-2-api.herokuapp.com/videos";
-  const apiKey = "2bd1529e-9731-4ea5-974c-934934bdc239";
+  // const baseUrl = "https://project-2-api.herokuapp.com/videos";
+  // const apiKey = "2bd1529e-9731-4ea5-974c-934934bdc239";
 
   // videoId to find selected video
   const selectedVideoFromParams = videos.find((video) => video.id === videoId);
@@ -30,12 +32,24 @@ export default function HomePage() {
   useEffect(() => {
     const fetchVideos = async () => {
       try {
-        const response = await axios.get(`${baseUrl}?api_key=${apiKey}`);
+        // const response = await axios.get(`${baseUrl}?api_key=${apiKey}`);
+        const response = await axios.get(`http://localhost:8080/videos`);
+
+        //   //Getting 4 properties (id, title, channel, image/thumbnail)
+        // const simplifiedVideos = response.data.map(video => ({
+        //   id: video.id,
+        //   title: video.title,
+        //   channel: video.channel,
+        //   image: video.image,
+        // }));
+
+        // setVideos(simplifiedVideos);
         setVideos(response.data);
 
         const singleVideo = videoId || "84e96018-4022-434e-80bf-000ce4cd12b8";
         const singleVideoRes = await axios.get(
-          `${baseUrl}/${singleVideo}?api_key=${apiKey}`
+          // `${baseUrl}/${singleVideo}?api_key=${apiKey}`
+          `http://localhost:8080/videos/${singleVideo}`
         );
         setSelectedVideo(singleVideoRes.data);
         setCommentsCount(singleVideoRes.data.comments.length);
