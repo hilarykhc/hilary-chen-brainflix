@@ -87,121 +87,25 @@
 //   );
 // }
 
-//------------------------------------------------------------------------JOSEPH"S DEMO
-
-// import { useNavigate, Link } from "react-router-dom";
-// import uploadThumbnail from "../../assets/Images/Upload-video-preview.jpg";
-// import "./UploadPage.scss";
-// import axios from "axios";
-// import { useState, useEffect } from "react";
-
-// export default function UploadPage() {
-//   const [videosData, setVideosData] = useState([]);
-
-//   const getVideos = async () => {
-//     try {
-//       const response = await axios.get(`http://localhost:8080/videos`);
-//       console.log(response.data);
-//       setVideosData(response.data);
-//     } catch (error) {
-//       console.error(error);
-//     }
-//   };
-
-//   useEffect(() => {
-//     getVideos();
-//   }, []);
-
-//   const handleVideoSubmit = async (event) => {
-//     event.preventDefault();
-
-//     const title = event.currentTarget.title.value;
-//     const description = event.currentTarget.description.value;
-//     const timestamp = Date.now();
-
-//     try {
-//       const response = await axios.post(`http://localhost:8080/videos`, {
-//         title: title,
-//         description: description,
-//         timestamp: timestamp,
-//       });
-//       console.log(response);
-//       getVideos();
-//       event.target.reset();
-//     } catch (error) {
-//       console.error(error);
-//     }
-//   };
-
-//   return (
-//     <div className="upload">
-//       <div className="upload__container">
-//         <h1 className="upload__title">Upload Video</h1>
-//         <form className="upload__form" onSubmit={handleVideoSubmit}>
-//           <div className="upload__form-title">
-//             <p className="upload__form-thumbnail">VIDEO THUMBNAIL</p>
-//             <img
-//               className="upload__form-image"
-//               alt="upload thumbnail"
-//               src={uploadThumbnail}
-//             ></img>
-//           </div>
-//           <div className="upload__form-content">
-//             <label className="upload__form-subtitle" htmlFor="title">
-//               TITLE YOUR VIDEO
-//             </label>
-//             <input
-//               className="upload__form-subtitle-input"
-//               name="title"
-//               id="title"
-//               placeholder="Add a title to your video"
-//             ></input>
-//             <label className="upload__form-subtitle" htmlFor="description">
-//               ADD A VIDEO DESCRIPTION
-//             </label>
-//             <textarea
-//               className="upload__form-subtitle-description"
-//               name="description"
-//               id="description"
-//               placeholder="Add a description to your video"
-//             ></textarea>
-//           </div>
-//         </form>
-//         <div className="upload__buttons">
-//           <button
-//             type="submit"
-//             // onClick={handlePublish}
-//             onClick={(event) => handleVideoSubmit(event)}
-//             className="upload__button-publish"
-//           >
-//             PUBLISH
-//           </button>
-//           <Link to="/" className="upload__button-cancel-link">
-//             <p className="upload__button-cancel">CANCEL</p>
-//           </Link>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
 //--------------------------------------------------------------------formRef
 
 import { Link, useNavigate } from "react-router-dom";
-// import { ToastContainer, toast } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { useRef } from "react";
 import uploadThumbnail from "../../assets/Images/Upload-video-preview.jpg";
+import "./UploadPage.scss";
 
 export default function UploadPage() {
-  // const notify = () => toast("Video Uploaded.");
+  const notify = () => toast("Video Uploaded.");
 
   let navigate = useNavigate();
 
   const uploadVideo = async (title, description) => {
     const newVideo = {
       title: title,
-      channel: description,
+      description: description,
     };
     try {
       const { data } = await axios.post(
@@ -233,7 +137,7 @@ export default function UploadPage() {
 
     setTimeout(() => {
       navigate("/");
-    }, 3000);
+    }, 2000);
   }
 
   return (
@@ -281,18 +185,13 @@ export default function UploadPage() {
             PUBLISH
           </button>
 
-          {/* <ToastContainer
-            position="bottom-center"
-            autoClose={2000}
-            hideProgressBar={false}
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
+          <ToastContainer
+            position="top-center"
+            autoClose={1500}
             theme="light"
-          /> */}
+            hideProgressBar={false}
+            pauseOnFocusLoss
+          />
 
           <Link to="/" className="upload__button-cancel-link">
             <p className="upload__button-cancel">CANCEL</p>
