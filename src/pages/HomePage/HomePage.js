@@ -8,7 +8,7 @@ import axios from "axios";
 import "./HomePage.scss";
 import { CommentsCountContext } from "../../App";
 
-// const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
+const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 export default function HomePage() {
   const [videos, setVideos] = useState([]);
@@ -33,7 +33,7 @@ export default function HomePage() {
     const fetchVideos = async () => {
       try {
         // const response = await axios.get(`${baseUrl}?api_key=${apiKey}`);
-        const response = await axios.get(`http://localhost:8080/videos`);
+        const response = await axios.get(`${REACT_APP_SERVER_URL}/videos`);
 
         //   //Getting 4 properties (id, title, channel, image/thumbnail)
         // const simplifiedVideos = response.data.map(video => ({
@@ -49,10 +49,10 @@ export default function HomePage() {
         const singleVideo = videoId || "84e96018-4022-434e-80bf-000ce4cd12b8";
         const singleVideoRes = await axios.get(
           // `${baseUrl}/${singleVideo}?api_key=${apiKey}`
-          `http://localhost:8080/videos/${singleVideo}`
+          `${REACT_APP_SERVER_URL}/videos/${singleVideo}`
         );
         setSelectedVideo(singleVideoRes.data);
-        setCommentsCount(singleVideoRes.data.comments.length);
+        setCommentsCount(singleVideoRes.data.comments.length); //adjust length
       } catch (error) {
         console.error(error);
       }

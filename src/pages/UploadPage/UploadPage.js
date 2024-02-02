@@ -1,94 +1,3 @@
-// import { useNavigate, Link } from "react-router-dom";
-// import uploadThumbnail from "../../assets/Images/Upload-video-preview.jpg";
-// import "./UploadPage.scss";
-// import axios from "axios";
-// import { fetchVideos } from "../../utils";
-
-// export default function UploadPage() {
-//   const navigate = useNavigate();
-
-//   const handlePublish = (event) => {
-//     event.preventDefault();
-//     alert("Your upload was successful!");
-//     navigate("/");
-//   };
-
-//   const handlePostVideo = async (event) => {
-//     event.preventDefault();
-
-//     const title = event.target.title.value;
-//     const description = event.target.description.value;
-//     const timestamp = Date.now();
-
-//     try {
-//       const response = await axios.post(`http://localhost:8080/videos`, {
-//         title: title,
-//         description: description,
-//         timestamp: timestamp,
-//       });
-
-//       console.log("Upload is successful!", response.data);
-
-//       fetchVideos(); //-----------
-//       event.target.reset();
-//     } catch (error) {
-//       console.error(error);
-//     }
-//   };
-
-//   return (
-//     <div className="upload">
-//       <div className="upload__container">
-//         <h1 className="upload__title">Upload Video</h1>
-//         <form className="upload__form" onSubmit={handlePostVideo}>
-//           <div className="upload__form-title">
-//             <p className="upload__form-thumbnail">VIDEO THUMBNAIL</p>
-//             <img
-//               className="upload__form-image"
-//               alt="upload thumbnail"
-//               src={uploadThumbnail}
-//             ></img>
-//           </div>
-//           <div className="upload__form-content">
-//             <label className="upload__form-subtitle" htmlFor="title">
-//               TITLE YOUR VIDEO
-//             </label>
-//             <input
-//               className="upload__form-subtitle-input"
-//               name="title"
-//               id="title"
-//               placeholder="Add a title to your video"
-//             ></input>
-//             <label className="upload__form-subtitle" htmlFor="description">
-//               ADD A VIDEO DESCRIPTION
-//             </label>
-//             <textarea
-//               className="upload__form-subtitle-description"
-//               name="description"
-//               id="description"
-//               placeholder="Add a description to your video"
-//             ></textarea>
-//           </div>
-//         </form>
-//         <div className="upload__buttons">
-//           <button
-//             type="submit"
-//             onClick={handlePublish}
-//             className="upload__button-publish"
-//           >
-//             PUBLISH
-//           </button>
-//           <Link to="/" className="upload__button-cancel-link">
-//             <p className="upload__button-cancel">CANCEL</p>
-//           </Link>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-//--------------------------------------------------------------------formRef
-
 import uploadThumbnail from "../../assets/Images/Upload-video-preview.jpg";
 import "./UploadPage.scss";
 import axios from "axios";
@@ -100,18 +9,23 @@ import { useRef } from "react";
 export default function UploadPage() {
   const notify = () => toast("Your upload was successful.");
 
-  let navigate = useNavigate();
+  const navigate = useNavigate();
+  const fileInputRef = useRef();
 
   const uploadVideo = async (title, description) => {
     const newVideo = {
       title: title,
       description: description,
+      image: uploadThumbnail,
     };
+
     try {
       const { data } = await axios.post(
         "http://localhost:8080/videos",
         newVideo
       );
+
+      console.log(data);
     } catch (error) {
       console.log(error);
     }
@@ -125,9 +39,10 @@ export default function UploadPage() {
     const form = formRef.current;
     const title = form.title.value;
     const description = form.description.value;
+    // const image = uploadThumbnail;
 
     if (title === "" || description === "") {
-      alert("Please fill out all form fields");
+      alert("Please complete the form");
       return;
     }
 
@@ -144,8 +59,13 @@ export default function UploadPage() {
     <div className="upload">
       <div className="upload__container">
         <h1 className="upload__title">Upload Video</h1>
-        <form className="upload__form" ref={formRef}>
-          {/* <form className="upload__form" onSubmit={handleVideoSubmit} */}
+        <form
+          className="upload__form"
+          ref={formRef}
+          onSubmit={handleVideoSubmit}
+        >
+          {/* <div> */}
+          {/* <form className="upload__form" onSubmit={handleVideoSubmit}> */}
           <div className="upload__form-title">
             <p className="upload__form-thumbnail">VIDEO THUMBNAIL</p>
             <img
@@ -159,6 +79,7 @@ export default function UploadPage() {
               TITLE YOUR VIDEO
             </label>
             <input
+              type="text"
               className="upload__form-subtitle-input"
               name="title"
               id="title"
@@ -168,12 +89,14 @@ export default function UploadPage() {
               ADD A VIDEO DESCRIPTION
             </label>
             <textarea
+              type="text"
               className="upload__form-subtitle-description"
               name="description"
               id="description"
               placeholder="Add a description to your video"
             ></textarea>
           </div>
+          {/* </div> */}
         </form>
         <div className="upload__buttons">
           <button
@@ -188,15 +111,14 @@ export default function UploadPage() {
           <ToastContainer
             position="top-center"
             autoClose={1500}
-            theme="light"
             hideProgressBar={false}
-            pauseOnFocusLoss
           />
 
           <Link to="/" className="upload__button-cancel-link">
             <p className="upload__button-cancel">CANCEL</p>
           </Link>
         </div>
+        {/* </form> */}
       </div>
     </div>
   );
