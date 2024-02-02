@@ -89,16 +89,16 @@
 
 //--------------------------------------------------------------------formRef
 
+import uploadThumbnail from "../../assets/Images/Upload-video-preview.jpg";
+import "./UploadPage.scss";
+import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import axios from "axios";
 import { useRef } from "react";
-import uploadThumbnail from "../../assets/Images/Upload-video-preview.jpg";
-import "./UploadPage.scss";
 
 export default function UploadPage() {
-  const notify = () => toast("Video Uploaded.");
+  const notify = () => toast("Your upload was successful.");
 
   let navigate = useNavigate();
 
@@ -145,7 +145,7 @@ export default function UploadPage() {
       <div className="upload__container">
         <h1 className="upload__title">Upload Video</h1>
         <form className="upload__form" ref={formRef}>
-          {/* <form className="upload__form" onSubmit={handleVideoSubmit} ref={formRef}> */}
+          {/* <form className="upload__form" onSubmit={handleVideoSubmit} */}
           <div className="upload__form-title">
             <p className="upload__form-thumbnail">VIDEO THUMBNAIL</p>
             <img
