@@ -29,37 +29,64 @@ export default function HomePage() {
     (video) => video.id !== selectedVideo?.id
   );
 
+  //---------------------------------------------------------
+
   useEffect(() => {
     const fetchVideos = async () => {
       try {
-        // const response = await axios.get(`${baseUrl}?api_key=${apiKey}`);
         const response = await axios.get(`${REACT_APP_SERVER_URL}/videos`);
-
-        //   //Getting 4 properties (id, title, channel, image/thumbnail)
-        // const simplifiedVideos = response.data.map(video => ({
-        //   id: video.id,
-        //   title: video.title,
-        //   channel: video.channel,
-        //   image: video.image,
-        // }));
-
-        // setVideos(simplifiedVideos);
         setVideos(response.data);
-
-        const singleVideo = videoId || "84e96018-4022-434e-80bf-000ce4cd12b8";
-        const singleVideoRes = await axios.get(
-          // `${baseUrl}/${singleVideo}?api_key=${apiKey}`
-          `${REACT_APP_SERVER_URL}/videos/${singleVideo}`
-        );
-        setSelectedVideo(singleVideoRes.data);
-        setCommentsCount(singleVideoRes.data.comments.length); //adjust length
       } catch (error) {
         console.error(error);
       }
     };
 
     fetchVideos();
+  }, []);
+
+  useEffect(() => {
+    const fetchSingleVideo = async () => {
+      try {
+        const singleVideo = videoId || "84e96018-4022-434e-80bf-000ce4cd12b8";
+        const singleVideoRes = await axios.get(
+          `${REACT_APP_SERVER_URL}/videos/${singleVideo}`
+        );
+        setSelectedVideo(singleVideoRes.data);
+        setCommentsCount(singleVideoRes.data.comments.length);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchSingleVideo();
   }, [videoId]);
+
+  //-------------------------------------------------------------
+
+  // useEffect(() => {
+  //   const fetchVideos = async () => {
+  //     try {
+  //       // const response = await axios.get(`${baseUrl}?api_key=${apiKey}`);
+  //       const response = await axios.get(`${REACT_APP_SERVER_URL}/videos`);
+
+  //       setVideos(response.data);
+
+  //       const singleVideo = videoId || "84e96018-4022-434e-80bf-000ce4cd12b8";
+  //       const singleVideoRes = await axios.get(
+  //         // `${baseUrl}/${singleVideo}?api_key=${apiKey}`
+  //         `${REACT_APP_SERVER_URL}/videos/${singleVideo}`
+  //       );
+  //       setSelectedVideo(singleVideoRes.data);
+  //       setCommentsCount(singleVideoRes.data.comments.length); //adjust length
+  //     } catch (error) {
+  //       console.error(error);
+  //     }
+  //   };
+
+  //   fetchVideos();
+  // }, [videoId]);
+
+  //---------------------------------------------------------------------------------
 
   const handleSelectVideo = (clickedId) => {
     const foundVideo = videos.find((video) => clickedId === video.id);

@@ -1,10 +1,12 @@
-import uploadThumbnail from "../../assets/Images/Upload-video-preview.jpg";
+// import uploadThumbnail from "../../assets/Images/Upload-video-preview.jpg";
 import "./UploadPage.scss";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useRef } from "react";
+
+const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 export default function UploadPage() {
   const notify = () => toast("Your upload was successful.");
@@ -16,12 +18,11 @@ export default function UploadPage() {
     const newVideo = {
       title: title,
       description: description,
-      image: uploadThumbnail,
     };
 
     try {
       const { data } = await axios.post(
-        "http://localhost:8080/videos",
+        `${REACT_APP_SERVER_URL}/videos`,
         newVideo
       );
 
@@ -39,7 +40,6 @@ export default function UploadPage() {
     const form = formRef.current;
     const title = form.title.value;
     const description = form.description.value;
-    // const image = uploadThumbnail;
 
     if (title === "" || description === "") {
       alert("Please complete the form");
@@ -71,7 +71,8 @@ export default function UploadPage() {
             <img
               className="upload__form-image"
               alt="upload thumbnail"
-              src={uploadThumbnail}
+              // src={uploadThumbnail}
+              src={`${REACT_APP_SERVER_URL}/images/Upload-video-preview.jpg`}
             ></img>
           </div>
           <div className="upload__form-content">
