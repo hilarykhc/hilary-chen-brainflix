@@ -33,7 +33,11 @@
     @include flex-column;
     justify-content: space-between;
     padding: 0 0 0.25rem 1rem;
-    font-size: 0.925rem;
+    font-size: 0.815rem;
+
+    @include tablet-and-desktop {
+      font-size: 0.9rem;
+    }
   }
 
   &__wrapper-card-info-title {
