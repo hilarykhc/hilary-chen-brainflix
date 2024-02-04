@@ -12,4 +12,8 @@
 
 .div-container2 {
   line-height: 1.15rem;
+
+  @include tablet-and-desktop {
+    line-height: 1.35rem;
+  }
 }

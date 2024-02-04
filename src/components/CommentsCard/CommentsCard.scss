@@ -10,6 +10,10 @@
       height: 2.5rem;
       width: 2.5rem;
     }
+
+    @include desktop {
+      margin-right: 2rem;
+    }
   }
 
   &__card {
@@ -21,6 +25,10 @@
     @include tablet-and-desktop {
       font-size: 0.9rem;
     }
+
+    @include desktop {
+      padding: 1.5rem 0;
+    }
   }
 
   &__card-wrapper2 {
@@ -30,10 +38,10 @@
   &__card-wrapper2-nameDate {
     display: flex;
     justify-content: space-between;
-    padding-bottom: 1rem;
+    padding-bottom: 0.5rem;
 
     @include desktop {
-      padding-right: 1rem;
+      padding-right: 1.5rem;
     }
   }
 
@@ -47,7 +55,7 @@
 
   &__card-wrapper2-text {
     @include desktop {
-      padding-right: 1rem;
+      padding-right: 1.5rem;
     }
   }
 }

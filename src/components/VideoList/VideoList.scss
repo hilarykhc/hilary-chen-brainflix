@@ -7,11 +7,11 @@
   padding: 1rem;
 
   @include tablet-and-desktop {
-    padding: 0 25.5rem 2.25rem 2.25rem;
+    padding: 0 26rem 2.25rem 2.25rem;
   }
 
   @include desktop {
-    padding: 1.5rem 0 1.5rem 1rem;
+    padding: 1.5rem 1.75rem 1.5rem 1.5rem;
     border-left: 1px solid $mercury-grey;
   }
 

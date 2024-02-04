@@ -4,23 +4,24 @@
 
 .videoList {
   &__wrapper-card-img {
-    width: 7rem;
+    width: 6.5rem;
     height: 4.5rem;
     border-radius: 4px;
     object-fit: cover;
 
+    @include tablet-and-desktop {
+      width: 7.5rem;
+      height: 4.5rem;
+    }
+
     @include desktop {
-      width: 10.5rem;
-      height: 5.5rem;
+      width: 8rem;
+      height: 5rem;
     }
   }
 
   &__wrapper-card {
     padding-top: 1rem;
-
-    @include desktop {
-      padding-top: 0.75rem;
-    }
   }
 
   &__wrapper-card2 {
@@ -37,6 +38,7 @@
 
     @include tablet-and-desktop {
       font-size: 0.9rem;
+      line-height: 1.3rem;
     }
   }
 
