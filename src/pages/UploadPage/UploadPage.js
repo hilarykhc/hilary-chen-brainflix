@@ -1,4 +1,3 @@
-// import uploadThumbnail from "../../assets/Images/Upload-video-preview.jpg";
 import "./UploadPage.scss";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
@@ -64,14 +63,11 @@ export default function UploadPage() {
           ref={formRef}
           onSubmit={handleVideoSubmit}
         >
-          {/* <div> */}
-          {/* <form className="upload__form" onSubmit={handleVideoSubmit}> */}
           <div className="upload__form-title">
             <p className="upload__form-thumbnail">VIDEO THUMBNAIL</p>
             <img
               className="upload__form-image"
               alt="upload thumbnail"
-              // src={uploadThumbnail}
               src={`${REACT_APP_SERVER_URL}/images/Upload-video-preview.jpg`}
             ></img>
           </div>
@@ -97,12 +93,10 @@ export default function UploadPage() {
               placeholder="Add a description to your video"
             ></textarea>
           </div>
-          {/* </div> */}
         </form>
         <div className="upload__buttons">
           <button
             type="submit"
-            // onClick={handlePublish}
             onClick={(event) => handleVideoSubmit(event)}
             className="upload__button-publish"
           >
@@ -119,7 +113,6 @@ export default function UploadPage() {
             <p className="upload__button-cancel">CANCEL</p>
           </Link>
         </div>
-        {/* </form> */}
       </div>
     </div>
   );

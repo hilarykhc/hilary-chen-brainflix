@@ -27,28 +27,3 @@ export default function CommentsCard({ selectedVideo }) {
     </div>
   );
 }
-
-// const [selectedVideo, setSelectedVideo] = useState([]);
-// useEffect(() => {
-//   const baseUrl = "https://project-2-api.herokuapp.com/videos";
-//   const apiKey = "2bd1529e-9731-4ea5-974c-934934bdc239";
-
-//   const fetchSingleVideo = async () => {
-//     if (selectedVideo) {
-//       const searchSingleVideo = (videoId) =>
-//         `${baseUrl}/${videoId}?api_key=${apiKey}`;
-//       try {
-//         if (selectedVideo && selectedVideo.id) {
-//           // if (selectedVideo.id) {
-//           const { data } = await axios.get(
-//             searchSingleVideo(selectedVideo.id)
-//           );
-//           setSelectedVideo(data);
-//         }
-//       } catch (error) {
-//         console.error(error);
-//       }
-//     }
-//   };
-//   fetchSingleVideo();
-// }, [selectedVideo]);

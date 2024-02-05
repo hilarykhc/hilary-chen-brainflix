@@ -16,9 +16,6 @@ export default function HomePage() {
   const { videoId = "" } = useParams();
   const { setCommentsCount } = useContext(CommentsCountContext);
 
-  // const baseUrl = "https://project-2-api.herokuapp.com/videos";
-  // const apiKey = "2bd1529e-9731-4ea5-974c-934934bdc239";
-
   // videoId to find selected video
   const selectedVideoFromParams = videos.find((video) => video.id === videoId);
 
@@ -28,8 +25,6 @@ export default function HomePage() {
   const filteredVideos = videos.filter(
     (video) => video.id !== selectedVideo?.id
   );
-
-  //---------------------------------------------------------
 
   useEffect(() => {
     const fetchVideos = async () => {
@@ -60,33 +55,6 @@ export default function HomePage() {
 
     fetchSingleVideo();
   }, [videoId]);
-
-  //-------------------------------------------------------------
-
-  // useEffect(() => {
-  //   const fetchVideos = async () => {
-  //     try {
-  //       // const response = await axios.get(`${baseUrl}?api_key=${apiKey}`);
-  //       const response = await axios.get(`${REACT_APP_SERVER_URL}/videos`);
-
-  //       setVideos(response.data);
-
-  //       const singleVideo = videoId || "84e96018-4022-434e-80bf-000ce4cd12b8";
-  //       const singleVideoRes = await axios.get(
-  //         // `${baseUrl}/${singleVideo}?api_key=${apiKey}`
-  //         `${REACT_APP_SERVER_URL}/videos/${singleVideo}`
-  //       );
-  //       setSelectedVideo(singleVideoRes.data);
-  //       setCommentsCount(singleVideoRes.data.comments.length); //adjust length
-  //     } catch (error) {
-  //       console.error(error);
-  //     }
-  //   };
-
-  //   fetchVideos();
-  // }, [videoId]);
-
-  //---------------------------------------------------------------------------------
 
   const handleSelectVideo = (clickedId) => {
     const foundVideo = videos.find((video) => clickedId === video.id);
